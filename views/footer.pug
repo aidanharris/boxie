@@ -1,0 +1,7 @@
+.footer
+.container
+p
+if ENV_DEVELOPMENT
+  include ./layout/js_dev.pug
+else
+  block js

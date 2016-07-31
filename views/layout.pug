@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title= title
+    if ENV_DEVELOPMENT
+        include ./layout/css_dev.pug
+        script(src='http://localhost:'+ ENV_LIVE_RELOAD_PORT +'/livereload.js')
+    else
+        block css
+  body(ng-app='angularApp')
+  <!--[if lt IE 8]>
+  p.browsehappy
+  | You are using an 
+  strong outdated
+  |  browser. Please 
+  a(href='http://browsehappy.com/') upgrade your browser
+  |  to improve your experience.
+  <![endif]-->
+  block header
+    include ./header.pug
+  block content
+  block footer
+    include ./footer.pug
